@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookshelf App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="mainNav"><p style="text-align: center; font-size: 20px; font-weight: 600;">Bookshelf App</p>
+        <div class="container">
+           <div class="search">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none" class="icon-search">
+                <g clip-path="url(#clip0_1_314)">
+                <path d="M17.7539 15.5637L14.2488 12.0586C14.0906 11.9004 13.8762 11.8125 13.6512 11.8125H13.0781C14.0484 10.5715 14.625 9.01055 14.625 7.3125C14.625 3.27305 11.352 0 7.3125 0C3.27305 0 0 3.27305 0 7.3125C0 11.352 3.27305 14.625 7.3125 14.625C9.01055 14.625 10.5715 14.0484 11.8125 13.0781V13.6512C11.8125 13.8762 11.9004 14.0906 12.0586 14.2488L15.5637 17.7539C15.8941 18.0844 16.4285 18.0844 16.7555 17.7539L17.7504 16.759C18.0809 16.4285 18.0809 15.8941 17.7539 15.5637ZM7.3125 11.8125C4.82695 11.8125 2.8125 9.80156 2.8125 7.3125C2.8125 4.82695 4.82344 2.8125 7.3125 2.8125C9.79805 2.8125 11.8125 4.82344 11.8125 7.3125C11.8125 9.79805 9.80156 11.8125 7.3125 11.8125Z" fill="#64748B" class="path-icon-search"/>
+                </g>
+                <defs>
+                <clipPath id="clip0_1_314">
+                <rect width="18" height="18" fill="white"/>
+                </clipPath>
+                </defs>
+            </svg>
+            <input type="text" class="input" placeholder="Mencari buku ku ...." id="search-book">
+           </div>
+        </div>
+    </header>
+    <main class="container">
+        <div class="flex-column" style="gap: 20px;">
+            <div class="menu">
+                <div class="menu-btn active">Selesai dibaca</div>
+                <div class="menu-btn">Belum selesai dibaca</div>
+            </div>
+            <div class="books">
+            </div>
+        </div>
+        <div class="hidden-modal-add-book">
+            <div class="head-modal">
+                <div id="exit-modal" style="text-align: right; cursor: pointer; font-size: 26px;">❌</div>
+                <h2 style="color: white;">Tambah Koleksi buku</h2>
+            </div>
+            <form class="form-add-book" id="addbook">
+                <input type="text" placeholder="Masukan judul buku ... " class="i-add" name="title">
+                <input type="text" placeholder="Masukan penulis buku ... " class="i-add" name="author">
+                <input type="number" placeholder="Masukan tahun buku diterbitkan ... " class="i-add" name="year">
+                <div class="checkbox">
+                    <input type="checkbox" class="i-checkbox" name="checkboxR">
+                    <label style="color: white;">Tandai !! apabila selesai dibaca</label><br>
+                </div>
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+        </div>
+        <div class="hidden-modal-edit-book">
+            <div class="head-modal">
+                <div id="exit-modal-edit" style="text-align: right; cursor: pointer; font-size: 26px;">❌</div>
+                <h2 style="color: white;">Edit Koleksi buku</h2>
+            </div>
+            <form class="form-edit-book" id="editbook">
+                <input type="hidden" name="data-id">
+                <input type="text" placeholder="Masukan judul buku ... " class="i-add" name="title">
+                <input type="text" placeholder="Masukan penulis buku ... " class="i-add" name="author">
+                <input type="number" placeholder="Masukan tahun buku diterbitkan ... " class="i-add" name="year">
+                <div class="checkbox">
+                    <input type="checkbox" class="i-checkbox" name="checkboxR">
+                    <label style="color: white;">Tandai !! apabila selesai dibaca</label><br>
+                </div>
+                <button type="submit" class="submit-btn">Edit</button>
+            </form>
+        </div>
+        <div class="hidden-delete-modal">
+            <div class="card-delete">
+                <p>Menghapus ' ' ?</p>
+                <div id="delete-choice" style="display: flex; gap: 6px; justify-content: center;">
+                    <button class="cancel-btn">Cancel</button>
+                    <button class="delete-btn">Delete</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div class="add-btn">➕</div>
+    <script src="script.js" type="text/javascript"></script>
+</body>
+</html>

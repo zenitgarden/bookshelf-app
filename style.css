@@ -1,0 +1,457 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: cursive,sans-serif;
+    background-color: #F8F8F8;
+}
+
+*{
+    color: #1E293B;
+}
+
+.container{
+    margin:20px 100px;
+    padding: 6px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:600px;
+    gap: 10px;
+    border-radius: 8px;
+    padding: 20px 40px;
+    border: 1px solid #CBD5E1;
+    background: #FDFDFD;
+    font-family: Inika;
+    color: #64748B;
+    font-family: Inika;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.input {
+    outline: none;
+    border: none;
+    width: 100%;
+    font-size: 16px;
+}
+.icon-search {
+    transition: all 0.4s ease-out;
+}
+.icon-search:hover{
+    cursor:pointer;
+    transform: rotate(0.1turn);
+}
+.icon-search .path-icon-search {
+    transition: all 0.4s ease-out;
+}
+.icon-search:hover .path-icon-search {
+    fill:#0F172A;
+}
+
+.flex-column {
+    display: flex;
+    width:100%;
+    flex-direction:column;
+}
+
+.menu {
+    display: flex;
+    width:100%;
+    gap:20px;
+    align-items: flex-start;
+}
+
+.menu-btn {
+    border-radius: 6px;
+    border: 2px solid #CBD5E1;
+    padding: 8px 16px;
+    background-color: white;
+    transition: all 0.4s ease-out;
+}
+
+.menu-btn:hover {
+    background-color: #F1F1F1;
+    cursor:pointer;
+}
+
+.books {
+    display:flex;
+    flex-wrap: wrap;
+    width:100%;
+    gap:10px;
+}
+
+.book {
+    display:flex;
+    align-items: center;
+    border-radius: 6px;
+    border: 1px solid #CBD5E1;
+    background-color: white;
+    transition: all 0.4s ease-out;
+    gap:20px;
+    font-family: Inter;
+    position:relative;
+    animation-name: fadeIn;
+    animation-duration: 0.5s;
+}
+
+.book-hidden {
+    display:none;
+    animation-name: fadeOut;
+    animation-duration: 0.5s;
+}
+
+.title-author {
+    padding: 20px;
+    gap:8px;
+}
+
+.title {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.author {
+    font-size: 14px;
+    color: #727D8C;
+}
+.year {
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    font-size: 18px;
+    padding:20px;
+}
+
+.add-btn {
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #FDFDFD;
+    box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.25);
+    font-size: 28px;
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    cursor:pointer;
+    transition: all 0.4s ease-out;
+}
+
+.add-btn:hover {
+    background: #F1F1F1;
+}
+
+.modal-add-book {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(26,32,44, 0.5);
+    opacity: 1;
+    position: fixed;
+    display: flex;
+    flex-direction:column;
+    z-index: 10;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    text-align: center;
+    animation-name: fadeIn;
+    animation-duration: 0.5s;
+}
+
+.modal-edit-book {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(26,32,44, 0.5);
+    opacity: 1;
+    position: fixed;
+    display: flex;
+    flex-direction:column;
+    z-index: 10;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    text-align: center;
+    animation-name: fadeIn;
+    animation-duration: 0.5s;
+}
+
+.hidden-modal-edit-book {
+    display:none;
+    animation-name: fadeOut;
+    animation-duration: 0.5s;
+}
+
+.head-modal {
+    margin: 100px 350px 0px;
+}
+
+.hidden-modal-add-book {
+    display:none;
+    animation-name: fadeOut;
+    animation-duration: 0.5s;
+}
+
+.form-add-book {
+    display: flex;
+    flex-direction:column;
+    gap:18px;
+    margin:0 350px;
+}
+
+.form-edit-book {
+    display: flex;
+    flex-direction:column;
+    gap:18px;
+    margin:0 350px;
+}
+
+.checkbox {
+    align-self: flex-start;
+}
+
+.i-add {
+    outline: none;
+    border: 2px solid white;
+    border-radius: 4px;
+    padding:12px 12px;
+    font-size: 16px;
+}
+
+
+.submit-btn {
+    background:#0F172A;
+    color: white;
+    border-radius: 4px;
+    border: 0;
+    padding: 18px;
+    cursor:pointer;
+    outline: none;
+    transition: all 0.4s ease-out;
+    font-size:14px;
+}
+.submit-btn:hover {
+    background: #1C2A4A;
+}
+
+.actions-book {
+    background-color: rgba(26,32,44, 0.4);
+    opacity: 1;
+    border-radius: 0px 6px 6px 0px;
+    position:absolute;
+    width:50%;
+    height:100%;
+    right: 0;
+    transition: all 0.4s ease-out;
+    animation-name: fadeIn;
+    animation-duration: 0.5s;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap:20px;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeOut {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
+
+.update-btn {
+    font-family: Inter;
+    border-radius: 2px;
+    border: 0px;
+    padding: 8px 20px;
+    background-color: white;
+    transition: all 0.4s ease-out;
+    color:black;
+    font-size: 16px;
+    font-weight: 200;
+    cursor:pointer;
+}
+
+.delete-btn{
+    font-family: Inter;
+    border-radius: 2px;
+    border: 0px;
+    padding: 8px 20px;
+    background-color: #EF4444;
+    transition: all 0.4s ease-out;
+    color:white;
+    font-size: 16px;
+    font-weight: 200;
+    cursor:pointer;
+}
+
+.update-btn:hover{
+    color: #006dff;
+}
+
+.delete-btn:hover{
+    background-color: #FF6262;
+}
+
+.delete-modal {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(26,32,44, 0.5);
+    opacity: 1;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:column;
+    z-index: 10;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    text-align: center;
+    animation-name: fadeIn;
+    animation-duration: 0.5s;
+}
+
+.hidden-delete-modal {
+    display: none;
+}
+
+.card-delete {
+    background: white;
+    boder-radius: 6px;
+    padding: 24px;
+}
+
+.cancel-btn {
+    font-family: Inter;
+    border-radius: 2px;
+    border: 0px;
+    padding: 8px 20px;
+    background-color: white;
+    transition: all 0.4s ease-out;
+    color:black;
+    font-size: 16px;
+    font-weight: 200;
+    cursor:pointer;
+}
+.cancel-btn:hover{
+    color: #006dff;
+}
+
+.active {
+    background-color: #F1F1F1;
+}
+
+.read {
+    border-radius: 2px;
+    border: 0px;
+    padding: 8px 10px;
+    background-color: #5c9df2;
+    transition: all 0.4s ease-out;
+    color:white;
+    font-size: 16px;
+    font-weight: 200;
+    cursor:pointer;
+    width: 52px;
+}
+
+.n-read {
+    border-radius: 2px;
+    border: 0px;
+    padding: 8px 10px;
+    background-color: #d1b53d;
+    transition: all 0.4s ease-out;
+    color:white;
+    font-size: 16px;
+    font-weight: 200;
+    cursor:pointer;
+    width: 104px;
+}
+
+.read:hover {
+    background-color:#53b1fc;
+}
+.n-read:hover {
+    background-color:#e6c743;
+}
+
+@media only screen and (max-width: 1240px) {
+    .head-modal {
+        margin: 100px 250px 0px;
+    } 
+    
+    .form-add-book {
+        margin:0 250px;
+    }
+}
+
+@media only screen and (max-width: 1060px) {
+    .container {
+        margin: 20px 50px;
+    }
+
+    .head-modal {
+        margin: 100px 150px 0px;
+    } 
+    
+    .form-add-book {
+        margin:0 150px;
+    }
+    .form-edit-book {
+        margin:0 150px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .container {
+        margin: 20px 20px;
+    }
+
+    .head-modal {
+        margin: 100px 50px 0px;
+    } 
+    
+    .form-add-book {
+        margin:0 50px;
+    }
+    .form-edit-book {
+        margin:0 50px;
+    }
+
+    .add-btn {
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+ @media only screen and (max-width: 480px) {
+    .head-modal {
+        margin: 40px 20px 0px;
+    } 
+    
+    .form-add-book {
+        margin:0 30px;
+    }
+    .form-edit-book {
+        margin:0 30px;
+    }
+ }
